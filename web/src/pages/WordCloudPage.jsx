@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import { WordCloud } from '../components';
 import { haruData, natsuData, akiData, fuyuData, datasetInfo } from '../data';
 
-const getDataBySeasonn = (season) => {
+const getDataBySeason = (season) => {
   switch (season) {
     case 'natsu': return natsuData;
     case 'aki': return akiData;
@@ -13,7 +13,7 @@ const getDataBySeasonn = (season) => {
 
 const WordCloudPage = () => {
   const { season } = useParams();
-  const data = getDataBySeasonn(season);
+  const data = getDataBySeason(season);
   const info = datasetInfo[season] || datasetInfo.haru;
 
   return (
